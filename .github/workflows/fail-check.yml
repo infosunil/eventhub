@@ -1,0 +1,18 @@
+name: Fail Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  always-fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Intentional failure
+        run: |
+          echo "This step will fail intentionally."
+          exit 1
