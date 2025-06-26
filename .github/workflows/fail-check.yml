@@ -6,13 +6,13 @@ on:
       - main
 
 jobs:
-  always-fail:
+  always-pass:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Intentional failure
+      - name: Intentional success
         run: |
-          echo "This step will fail intentionally."
-          exit 1
+          echo "This step will pass intentionally."
+          exit 0
